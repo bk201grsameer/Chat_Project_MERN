@@ -1,0 +1,14 @@
+# 63e220cfc75f9621d71563d0
+###
+POST http://localhost:5000/api/message/sendmessage HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2Q3ZjFjMzAxOWQzZjQ2MGE0MmE1MTciLCJuYW1lIjoiaGltYXdhcmkiLCJlbWFpbCI6ImhpbWF3YXJpQGdtYWlsLmNvbSIsImlhdCI6MTY3NTc2NTY0NCwiZXhwIjoxNjc1ODUyMDQ0fQ.jPo1ATFnAsymWHrkA48UTblo02sLIRiJKOK6OJvzKIE
+
+{
+    "content":"kushina and himawari 2",
+    "chatId":"63d80f5949370278e22b9a8d"
+}
+
+###
+GET http://localhost:5000/api/message/63d80f5949370278e22b9a8d HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2Q3ZjFjMzAxOWQzZjQ2MGE0MmE1MTciLCJuYW1lIjoiaGltYXdhcmkiLCJlbWFpbCI6ImhpbWF3YXJpQGdtYWlsLmNvbSIsImlhdCI6MTY3NTc2NTY0NCwiZXhwIjoxNjc1ODUyMDQ0fQ.jPo1ATFnAsymWHrkA48UTblo02sLIRiJKOK6OJvzKIE

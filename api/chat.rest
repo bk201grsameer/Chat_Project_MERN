@@ -1,0 +1,53 @@
+###chat
+POST http://localhost:5000/api/chat/accesschat HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2Q3ZjFjMzAxOWQzZjQ2MGE0MmE1MTciLCJuYW1lIjoiaGltYXdhcmkiLCJlbWFpbCI6ImhpbWF3YXJpQGdtYWlsLmNvbSIsImlhdCI6MTY3NTc2NTY0NCwiZXhwIjoxNjc1ODUyMDQ0fQ.jPo1ATFnAsymWHrkA48UTblo02sLIRiJKOK6OJvzKIE
+
+{
+    "userId":"63d261351c653fc41ec14453"
+}
+
+###
+GET  http://localhost:5000/api/chat/fetchchats HTTP/1.1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2Q3ZjFjMzAxOWQzZjQ2MGE0MmE1MTciLCJuYW1lIjoiaGltYXdhcmkiLCJlbWFpbCI6ImhpbWF3YXJpQGdtYWlsLmNvbSIsImlhdCI6MTY3NTc2NTY0NCwiZXhwIjoxNjc1ODUyMDQ0fQ.jPo1ATFnAsymWHrkA48UTblo02sLIRiJKOK6OJvzKIE
+
+###
+POST http://localhost:5000/api/chat/group HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2QyNWJhYTI0YjE5MDcxNjY2ZTUxN2MiLCJuYW1lIjoibmFydXRvIiwiZW1haWwiOiJuYXJ1dG9AZ21haWwuY29tIiwiaWF0IjoxNjc1Mzc4MDgzLCJleHAiOjE2NzU0NjQ0ODN9.hPd0SIdbQNjhovUVtmwynKP86C_7y8krrRjY29XKLXE
+
+{
+    "name":"karle group chat bhosdike",
+    "users":"[\"63d2863ab49de328a26f80b7\",\"63d261401c653fc41ec14456\",\"63d261351c653fc41ec14453\"]"
+}
+
+
+###
+PUT http://localhost:5000/api/chat/rename HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2QyNWJhYTI0YjE5MDcxNjY2ZTUxN2MiLCJuYW1lIjoibmFydXRvIiwiZW1haWwiOiJuYXJ1dG9AZ21haWwuY29tIiwiaWF0IjoxNjc1Mzc4MDgzLCJleHAiOjE2NzU0NjQ0ODN9.hPd0SIdbQNjhovUVtmwynKP86C_7y8krrRjY29XKLXE
+
+{
+    "chatId":"63d288a0bdc3520769a487f5",
+    "chatName":"Updated chat name bhosdike"
+}
+
+
+###
+PUT http://localhost:5000/api/chat/groupadd HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2QyNWJhYTI0YjE5MDcxNjY2ZTUxN2MiLCJuYW1lIjoibmFydXRvIiwiZW1haWwiOiJuYXJ1dG9AZ21haWwuY29tIiwiaWF0IjoxNjc0OTgyNDM0LCJleHAiOjE2NzUwNjg4MzR9.K6UnqC3MMBCDnFH9wvrrVEWXQdQk1jjZgTIBwaRc9oY
+
+{
+    "chatId":"63d288a0bdc3520769a487f5",
+    "userId":"63d6364e9a11e44b86ac03af"
+}
+###
+PUT http://localhost:5000/api/chat/groupremove HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2QyNWJhYTI0YjE5MDcxNjY2ZTUxN2MiLCJuYW1lIjoibmFydXRvIiwiZW1haWwiOiJuYXJ1dG9AZ21haWwuY29tIiwiaWF0IjoxNjc0OTgyNDM0LCJleHAiOjE2NzUwNjg4MzR9.K6UnqC3MMBCDnFH9wvrrVEWXQdQk1jjZgTIBwaRc9oY
+
+{
+    "chatId":"63d288a0bdc3520769a487f5",
+    "userId":"63d6364e9a11e44b86ac03af"
+}
