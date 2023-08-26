@@ -63,6 +63,9 @@ Contributions are welcome! If you'd like to contribute to the project, please fo
 
 This project is licensed under the [MIT License](LICENSE).
 
+## Reference Link
+https://github.com/piyush-eon/mern-chat-app
+
 ## Contact
 
 For questions or feedback, you can reach us at sameerkarn369369@email.com.
