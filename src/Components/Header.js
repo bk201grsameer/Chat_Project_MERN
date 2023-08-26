@@ -16,7 +16,7 @@ const Header = () => {
         >
             <Text
                 fontSize={'4xl'}
-            >Talk-A-Tive-Clone</Text>
+            >Naruto Chat App</Text>
         </Box>
     );
 };

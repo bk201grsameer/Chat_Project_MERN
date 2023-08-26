@@ -60,11 +60,11 @@ const MyChats = ({ fetchAgain, setFetchAgain }) => {
                 alignItems="center"
             >
                 <Text>MyChat</Text>
-                <Button
+                {/* <Button
                     display={'flex'}
                     mt={1.5}
                     rightIcon={<AddIcon />}
-                >Group Chat</Button>
+                >Group Chat</Button> */}
             </Box>
             <Box
                 mt={1}

@@ -113,7 +113,7 @@ const SideDrawer = () => {
 
                 <Text
                     fontSize={{ base: 'xl', md: '3xl' }}
-                >Talk A Tive Clone</Text>
+                >Naruto Chat App</Text>
                 <div>
                     <Menu>
                         <MenuButton as={Button}

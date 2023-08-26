@@ -14,6 +14,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     const [newMessage, setNewMessage] = useState('');
     const { user, selectedChat, setSelectedChat } = ChatState();
     const { socket } = SocketState();
+    const [isTyping, setIsTyping] = useState(false);
     const lastMessageRef = useRef(null);
     console.log('get derived SingleChat', { user, selectedChat, messages, newMessage });
     //send message handler
@@ -47,14 +48,27 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 setMessages((messages) => { return [...messages, data.msg]; });
         };
         socket.on('newMessageResponse', eventListener);
+
+        const typingListener = (data) => {
+            console.log(data);
+            setIsTyping(data.typing);
+        };
+
+        socket.on('typing..', typingListener);
         return () => {
             socket.off('newMessageResponse', eventListener);
+            socket.off('typing..', typingListener);
         };
     }, [socket, messages]);
 
     // typing handler
     const typingHandler = (e) => {
         setNewMessage(e.target.value);
+        if (e.target.value === "")
+            socket.emit('typing..', ({ to: getUser(user, selectedChat.users)._id, typing: false }));
+
+        else
+            socket.emit('typing..', ({ to: getUser(user, selectedChat.users)._id, typing: true }));
         // future typing indicator logic
     };
 
@@ -78,9 +92,14 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             setLoading(false);
         }
     };
+
     useEffect(() => {
         fetchMessages();
     }, [selectedChat]);
+
+
+
+
 
     useEffect(() => {
         // 👇️ scroll to bottom every time messages change
@@ -139,6 +158,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                             isRequired={true}
                             mt={3}
                         >
+                            {isTyping && <h3 style={{ marginLeft: '5px', marginBottom: '3px' }}>Typing...</h3>}
                             <Input
                                 variant={'filled'}
                                 bg="#E0E0E0"
@@ -153,7 +173,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                     alignItems='center'
                     justifyContent={'center'}
                     height='100%'
-                ><Text>Select User To Start Chatting Fucker</Text>
+                ><Text>Select User To Start Chatting </Text>
                 </Box>}
         </>
     );

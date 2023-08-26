@@ -53,11 +53,17 @@ const Login = () => {
                 setLoading(false);
                 return;
             }
+            
             setLoading(false);
             if (data.sucess === true) {
                 setUserInfo({ token: data.token, user: data.userInfo });
                 localStorage.setItem('userInfo', JSON.stringify(data.userInfo));
-                socket.emit('newUser', { userName: data.userInfo.name, socketID: socket.id });
+                socket.emit('newUser', {
+                    userName: data.userInfo.name,
+                    socketID: socket.id,
+                    user_ID: data.userInfo._id
+
+                });
                 navigate('/chatpage');
             }
         } catch (error) {
@@ -91,9 +97,9 @@ const Login = () => {
                 />
                 <Box>
                     <ButtonHandler title={'Sign In'} handler={submit_Handler} loading={loading} />
-                    <Button colorScheme={'red'}
+                    {/* <Button colorScheme={'red'}
                         width='100%'
-                        marginTop={'8px'}>Submit</Button>
+                        marginTop={'8px'}>Submit</Button> */}
                 </Box>
             </VStack >
         </>
