@@ -23,8 +23,8 @@ This is a real-time chat application built using the MERN (MongoDB, Express, Rea
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/your-repo.git`
-2. Navigate to the project directory: `cd your-repo`
+1. Clone the repository: `git clone https://github.com/bk201grsameer/Chat_Project_MERN.git`
+2. Navigate to the project directory: `cd Chat_Project_MERN`
 3. Install server dependencies: `npm install`
 4. Navigate to the client directory: `cd client`
 5. Install client dependencies: `npm install`
